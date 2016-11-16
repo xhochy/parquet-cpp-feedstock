@@ -11,14 +11,14 @@ source:
   sha256: a8e643c87a7b8b4e84cb1e970369f719b8ace63efe520933251e8a086acd662f
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
 
 requirements:
   build:
     - toolchain
     - arrow-cpp
-    - boost 1.61.*
+    - boost 1.62.*
     - cmake
     - zlib 1.2.*
     - snappy

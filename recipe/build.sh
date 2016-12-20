@@ -9,6 +9,7 @@ export ARROW_HOME=$PREFIX
 export SNAPPY_HOME=$PREFIX
 export THRIFT_HOME=$PREFIX
 export ZLIB_HOME=$PREFIX
+export BROTLI_HOME=$PREFIX
 
 mkdir build-dir
 cd build-dir

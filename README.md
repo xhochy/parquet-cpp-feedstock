@@ -11,6 +11,18 @@ Summary: C++ libraries for the Apache Parquet file format
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/parquet-cpp-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/parquet-cpp-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/parquet-cpp-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/parquet-cpp-feedstock)
+Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/parquet-cpp/badges/version.svg)](https://anaconda.org/conda-forge/parquet-cpp)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/parquet-cpp/badges/downloads.svg)](https://anaconda.org/conda-forge/parquet-cpp)
+
 Installing parquet-cpp
 ======================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `parquet-cpp` available on your pl
 ```
 conda search parquet-cpp --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/parquet-cpp-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/parquet-cpp-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/parquet-cpp-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/parquet-cpp-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/parquet-cpp/badges/version.svg)](https://anaconda.org/conda-forge/parquet-cpp)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/parquet-cpp/badges/downloads.svg)](https://anaconda.org/conda-forge/parquet-cpp)
 
 
 Updating parquet-cpp-feedstock

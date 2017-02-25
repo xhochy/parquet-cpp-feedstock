@@ -1,5 +1,5 @@
 {% set version = "0.1.pre" %}
-{% set commit = "b1c85caf92678e46abd70037e639a922da47c617" %}
+{% set commit = "18fab9984f58e1967ffa1d8c6737e8e76bdeb345" %}
 
 package:
   name: parquet-cpp
@@ -8,16 +8,16 @@ package:
 source:
   fn: {{ commit }}.tar.gz
   url: https://github.com/apache/parquet-cpp/archive/{{ commit }}.tar.gz
-  sha256: 3fa84ed1db639af99db71805c001b7ec34225efd2c0e0df8cddccccf7c1f71e4
+  sha256: 3a99ba87bf052d4d743a9f92503ebeda8be899fce7cd2ba3336bbdd17aa0eb36
 
 build:
-  number: 12
+  number: 13
   skip: true  # [win]
 
 requirements:
   build:
     - toolchain
-    - arrow-cpp
+    - arrow-cpp 0.2.*
     - boost 1.63.*
     - cmake
     - zlib 1.2.*

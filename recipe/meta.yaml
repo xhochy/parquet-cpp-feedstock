@@ -11,7 +11,7 @@ source:
   sha256: 3a99ba87bf052d4d743a9f92503ebeda8be899fce7cd2ba3336bbdd17aa0eb36
 
 build:
-  number: 13
+  number: 14
   skip: true  # [win]
 
 requirements:
@@ -45,3 +45,4 @@ extra:
   recipe-maintainers:
     - wesm
     - xhochy
+    - leifwalsh

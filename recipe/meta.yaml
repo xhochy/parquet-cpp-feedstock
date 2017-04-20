@@ -1,4 +1,11 @@
-{% set version = "1.0.0" %}
+{% set version = "1.1.0pre" %}
+{% set commit = "5830482f7cc11392f9a14d9520bcbd8d6adc944b" %}
+
+# NOTE(wesm): When updating the build, please remember also to update the
+# pinned Arrow version. We are letting parquet-cpp build its own Apache Arrow
+# so that we do not have to update conda-packages for Arrow before we can
+# update this package. So if there is an ABI change in Arrow, we can update
+# this package faster
 
 package:
   name: parquet-cpp
@@ -6,26 +13,31 @@ package:
 
 source:
   fn: apache-parquet-cpp-{{ version }}.tar.gz
-  url: https://github.com/apache/parquet-cpp/archive/apache-parquet-cpp-{{ version }}.tar.gz
-  sha256: 79fe1c4c49731b7f4bb7f8074db0cb93840ce0e50713605d314832ee94b21bfc
+  url: https://github.com/apache/parquet-cpp/archive/{{ commit }}.tar.gz
+  sha256: 66117d9b52ee7665d73260ed9f79293afe4b275c1fc2381ef91063d64d02fe95
 
 build:
   number: 0
   skip: true  # [win]
 
+# TODO(wesm): Not including arrow-cpp in the requirements because that
+# introduces a build-time dependency on up-to-date conda-forge packages. While
+# these libraries are changing fast, this does more harm than good to developer
+# productivity. When things are changing less often, we should pin a precise
+# Arrow runtime version here
+
+# run:
+#   - arrow-cpp 0.3.*
+
 requirements:
   build:
     - toolchain
-    - arrow-cpp 0.2.*
-    - boost 1.63.*
+    - boost-cpp 1.63.*
     - cmake
     - zlib 1.2.*
     - snappy
     - brotli
     - thrift-cpp
-
-  run:
-    - arrow-cpp
 
 test:
   commands:

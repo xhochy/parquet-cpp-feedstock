@@ -1,5 +1,5 @@
 {% set version = "1.1.0pre" %}
-{% set commit = "5830482f7cc11392f9a14d9520bcbd8d6adc944b" %}
+{% set commit = "893af978a9184a17ca44cfbe44a786460e56a49a" %}
 
 # NOTE(wesm): When updating the build, please remember also to update the
 # pinned Arrow version. We are letting parquet-cpp build its own Apache Arrow
@@ -14,10 +14,10 @@ package:
 source:
   fn: apache-parquet-cpp-{{ version }}.tar.gz
   url: https://github.com/apache/parquet-cpp/archive/{{ commit }}.tar.gz
-  sha256: 66117d9b52ee7665d73260ed9f79293afe4b275c1fc2381ef91063d64d02fe95
+  sha256: ea6cb7870504717893d7dc78448de59b91cfbf4c7f33a2cb07ff3a0dacea2961
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 # TODO(wesm): Not including arrow-cpp in the requirements because that

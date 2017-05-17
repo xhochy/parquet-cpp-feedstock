@@ -1,5 +1,5 @@
 {% set version = "1.1.0pre" %}
-{% set commit = "2398317d17453487f496c39bc4c89dbd9c17c1c9" %}
+{% set commit = "339287aecc971c244c3e066b8a430e17ceea76e4" %}
 
 # NOTE(wesm): When updating the build, please remember also to update the
 # pinned Arrow version. We are letting parquet-cpp build its own Apache Arrow
@@ -14,10 +14,10 @@ package:
 source:
   fn: apache-parquet-cpp-{{ version }}.tar.gz
   url: https://github.com/apache/parquet-cpp/archive/{{ commit }}.tar.gz
-  sha256: 524c7778c2cab5b0bd1ae1635aa6f9f3ba016de1cffd66ea0e1120fa2165d692
+  sha256: 8aca91315211caac40a71d2ae031d12828f518f9e90d646cd1689c84d48c2943
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and not (py35 and win64)]
   features:
     - vc14  # [win and py35]
@@ -36,10 +36,10 @@ requirements:
     - toolchain
     - boost-cpp 1.63.*
     - cmake
-    - zlib 1.2.*        # [unix]
-    - snappy            # [unix]
-    - brotli            # [unix]
-    - thrift-cpp        # [unix]
+    - zlib 1.2.*
+    - snappy
+    - brotli
+    - thrift-cpp
     - python            # [win]
 
 test:

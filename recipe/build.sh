@@ -3,13 +3,7 @@
 set -e
 set -x
 
-# Build dependencies
-export BOOST_ROOT=$PREFIX
-export SNAPPY_HOME=$PREFIX
-export THRIFT_HOME=$PREFIX
-export ZLIB_HOME=$PREFIX
-export BROTLI_HOME=$PREFIX
-export PARQUET_ARROW_VERSION=a8f8ba0cbcf5f596f042e90b7a208e7a0c3925b7
+export PARQUET_BUILD_TOOLCHAIN=$PREFIX
 
 mkdir build-dir
 cd build-dir

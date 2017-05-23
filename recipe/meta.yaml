@@ -17,19 +17,10 @@ source:
   sha256: a8e77b53c26c56ff2d5043543ba62e7c4627ba786a7162c5b557fd6607c8f472
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and not (py35 and win64)]
   features:
     - vc14  # [win and py35]
-
-# TODO(wesm): Not including arrow-cpp in the requirements because that
-# introduces a build-time dependency on up-to-date conda-forge packages. While
-# these libraries are changing fast, this does more harm than good to developer
-# productivity. When things are changing less often, we should pin a precise
-# Arrow runtime version here
-
-# run:
-#   - arrow-cpp 0.3.*
 
 requirements:
   build:
@@ -40,7 +31,11 @@ requirements:
     - snappy
     - brotli
     - thrift-cpp
+    - arrow-cpp 0.4.*
     - python            # [win]
+
+  run:
+    - arrow-cpp 0.4.*
 
 test:
   requires:

@@ -17,7 +17,7 @@ source:
   sha256: a8e77b53c26c56ff2d5043543ba62e7c4627ba786a7162c5b557fd6607c8f472
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and not (py35 and win64)]
   features:
     - vc14  # [win and py35]

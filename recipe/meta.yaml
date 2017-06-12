@@ -1,5 +1,6 @@
-{% set version = "1.1.0" %}
-{% set commit = "116e80e06adce9b7298975b6b645b336445a2ff8" %}
+{% set version = "1.2.0.pre" %}
+{% set commit = "7e1a13053f9181cb639afc9d821c17cae58260d8" %}
+{% set sha256sum = "c4283305ff95dab14ae05cd50395320b8c4acf7c334c6b3ff4d7196d3c2f1137" %}
 
 # NOTE(wesm): When updating the build, please remember also to update the
 # pinned Arrow version. We are letting parquet-cpp build its own Apache Arrow
@@ -14,10 +15,10 @@ package:
 source:
   fn: apache-parquet-cpp-{{ version }}.tar.gz
   url: https://github.com/apache/parquet-cpp/archive/{{ commit }}.tar.gz
-  sha256: a8e77b53c26c56ff2d5043543ba62e7c4627ba786a7162c5b557fd6607c8f472
+  sha256: {{ sha256sum }}
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and not (py35 and win64)]
   features:
     - vc14  # [win and py35]
@@ -31,11 +32,10 @@ requirements:
     - snappy
     - brotli
     - thrift-cpp
-    - arrow-cpp 0.4.*
     - python            # [win]
 
   run:
-    - arrow-cpp 0.4.*
+    - arrow-cpp >=0.4.0
 
 test:
   requires:
@@ -43,17 +43,12 @@ test:
 
   commands:
     - test -f $PREFIX/lib/libparquet.so                                       # [linux]
-    - test -f $PREFIX/lib/libparquet_arrow.so                                 # [linux]
     - test -f $PREFIX/lib/libparquet.dylib                                    # [osx]
-    - test -f $PREFIX/lib/libparquet_arrow.dylib                              # [osx]
     - test -f $PREFIX/include/parquet/api/reader.h                            # [unix]
     - if not exist %PREFIX%\\Library\\include\\parquet\\api\\reader.h exit 1  # [win]
     - if not exist %PREFIX%\\Library\\bin\\parquet.dll exit 1                 # [win]
     - if not exist %PREFIX%\\Library\\lib\\parquet.lib exit 1                 # [win]
     - if not exist %PREFIX%\\Library\\lib\\parquet_static.lib exit 1          # [win]
-    - if not exist %PREFIX%\\Library\\bin\\parquet_arrow.dll exit 1           # [win]
-    - if not exist %PREFIX%\\Library\\lib\\parquet_arrow.lib exit 1           # [win]
-    - if not exist %PREFIX%\\Library\\lib\\parquet_arrow_static.lib exit 1    # [win]
 
 about:
   home: http://github.com/apache/parquet-cpp

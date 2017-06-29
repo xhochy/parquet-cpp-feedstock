@@ -1,4 +1,4 @@
-{% set version = "1.2.0.pre" %}
+{% set version = "1.1.0.post" %}
 {% set commit = "7e1a13053f9181cb639afc9d821c17cae58260d8" %}
 {% set sha256sum = "c4283305ff95dab14ae05cd50395320b8c4acf7c334c6b3ff4d7196d3c2f1137" %}
 
@@ -35,7 +35,7 @@ requirements:
     - python            # [win]
 
   run:
-    - arrow-cpp >=0.4.0
+    - arrow-cpp 0.4.1
 
 test:
   requires:

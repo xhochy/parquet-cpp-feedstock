@@ -4,7 +4,7 @@ set -e
 set -x
 
 export PARQUET_BUILD_TOOLCHAIN=$PREFIX
-export PARQUET_ARROW_VERSION=5fbfd8e58392439c754cdf19f6f3b27b28303e0a
+export PARQUET_ARROW_VERSION=362e754b395787fd935d0b66a0cdcbec8aa13f85
 
 mkdir build-dir
 cd build-dir
